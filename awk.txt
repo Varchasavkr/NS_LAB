@@ -1,0 +1,24 @@
+akshat@stella:/opt/ns-allinone-3.35/ns-3.35$ awk -f throughput.awk l3q1.tr 
+
+Average_Throughput=0.000000 bits/second 
+
+akshat@stella:/opt/ns-allinone-3.35/ns-3.35$ awk -f delay.awk l3q1.tr 
+Average_delay=0.000000 Seconds 
+akshat@stella:/opt/ns-allinone-3.35/ns-3.35$ awk -f pdf.awk l3q1.tr 
+
+Number of Packet Sent=13.000000  
+Number of Packet Dropped=0.000000  
+Number of Packet Received=13.000000  
+Packet Delivery Fraction (PDF)=100.000000 percent  
+
+akshat@stella:/opt/ns-allinone-3.35/ns-3.35$ awk -f pdf-graphcode.awk l3q1.tr > graph-pdf 
+awk: cannot open pdf-graphcode.awk (No such file or directory)
+akshat@stella:/opt/ns-allinone-3.35/ns-3.35$ awk -f pdf-graph.awk l3q1.tr > graph-pdf 
+akshat@stella:/opt/ns-allinone-3.35/ns-3.35$ gnuplot pdf-graphcode 
+akshat@stella:/opt/ns-allinone-3.35/ns-3.35$ awk -f throughput-graph.awk l3q1.tr > graph-Throughput 
+akshat@stella:/opt/ns-allinone-3.35/ns-3.35$ gnuplot Throughput-graphcode 
+akshat@stella:/opt/ns-allinone-3.35/ns-3.35$ awk -f delay-graph.awk l3q1.tr > graph-delay 
+akshat@stella:/opt/ns-allinone-3.35/ns-3.35$ gnuplot delay-graphcode 
+
+# ./waf --run "scratch/manet-routing-compare --protocol=3"
+python flow.py AODV.flowmon
